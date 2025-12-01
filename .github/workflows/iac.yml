@@ -21,7 +21,7 @@ permissions:
 
 jobs:
   terraform-job:
-    uses: FabioBartoli/linuxtips-terraform-reusable/.github/workflows/template.yml@main
+    uses: paulocesar-prod/linuxtips-terraform-reusable/.github/workflows/template.yml@main
     with:
       action: ${{ inputs.action }}
       working-directory: ${{ inputs.working-directory }}
