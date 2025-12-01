@@ -8,6 +8,6 @@ jobs:
     uses: paulocesar-prod/linuxtips-terraform-reusable/.github/workflows/terraform-plan.yml@main
     with:
       action: ${{ inputs.action }}
-      working-directory: ${{ inputs.working-directory }}
+      working-directory: ./iac
     secrets:
       AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
