@@ -1,3 +1,4 @@
+
 name: Cria Infra do Terraform
 
 on:
@@ -6,6 +7,9 @@ on:
 jobs:
   plan:
     uses: paulocesar-prog/linuxtips-terraform-reusable/.github/workflows/terraform-plan.yml@main
+    permissions:
+      id-token: write
+      contents: read
     with:
       working-directory: ./iac
     secrets:
