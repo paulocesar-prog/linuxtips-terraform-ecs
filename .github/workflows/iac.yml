@@ -5,7 +5,7 @@ on:
 
 jobs:
   plan:
-    uses: uses: paulocesar-prog/linuxtips-terraform-reusable/.github/workflows/terraform-plan.yml@main
+    uses: paulocesar-prog/linuxtips-terraform-reusable/.github/workflows/terraform-plan.yml@main
     with:
       working-directory: ./iac
     secrets:
