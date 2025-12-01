@@ -1,0 +1,29 @@
+name: Cria Infra do Terraform
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Escolha o que acontece no run deste workflow"
+        type: choice
+        options:
+          - apply
+          - destroy
+        default: apply
+      working-directory:
+        description: "Diretorio onde esta o codigo Terraform"
+        type: string
+        default: "./iac"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform-job:
+    uses: FabioBartoli/linuxtips-terraform-reusable/.github/workflows/template.yml@main
+    with:
+      action: ${{ inputs.action }}
+      working-directory: ${{ inputs.working-directory }}
+    secrets:
+      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
