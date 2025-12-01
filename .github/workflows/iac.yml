@@ -5,7 +5,7 @@ on:
 
 jobs:
   plan:
-    uses: paulocesar-prod/linuxtips-terraform-reusable/.github/workflows/template.yml@main
+    uses: paulocesar-prod/linuxtips-terraform-reusable/.github/workflows/terraform-plan.yml@main
     with:
       action: ${{ inputs.action }}
       working-directory: ${{ inputs.working-directory }}
