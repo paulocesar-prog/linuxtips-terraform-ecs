@@ -16,6 +16,7 @@ jobs:
       AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
   apply:
     needs: plan
+    if: ${{ jobs.plan.conclusion == success }}
     environment: tfapprove
     uses: paulocesar-prog/linuxtips-terraform-reusable/.github/workflows/terraform-apply.yml@main
     with:
