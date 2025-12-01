@@ -16,7 +16,7 @@ jobs:
       AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
   apply:
     needs: plan
-    if: ${{ needs.plan.result == success }}
+    if: ${{ needs.plan.result == 'success' }}
     uses: paulocesar-prog/linuxtips-terraform-reusable/.github/workflows/terraform-apply.yml@main
     with:
       working-directory: ./iac
