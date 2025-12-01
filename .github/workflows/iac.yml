@@ -14,3 +14,11 @@ jobs:
       working-directory: ./iac
     secrets:
       AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+  apply:
+    needs: plan
+    environment: tfapprove
+    uses: paulocesar-prog/linuxtips-terraform-reusable/.github/workflows/terraform-plan.yml@main
+    with:
+      working-directory: ./iac
+    secrets:
+      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
